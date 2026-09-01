@@ -1,0 +1,174 @@
+.container{
+  background-color:transparent;
+display: flex;
+flex-direction: column;
+}
+.country-card{
+  background-color: #ffffff;
+   border-radius: 10px;
+
+}
+span{
+   font-weight: lighter;
+}
+p{
+  font-weight: bold;
+}
+img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+button{
+  background-color: white;
+  border: none;
+  box-shadow: 2px 4px 10px #c5c3c3;
+}
+.button-box{
+  display: flex;
+align-items: center;
+  justify-content: center;
+}
+.country-box{
+  display: flex;
+  width: 100%;
+}
+
+@media screen and (max-width: 767px){
+.container{
+  width: 90%;
+  margin: 3rem auto 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+  .country-card{
+     width: 340px;
+    margin-top: 1rem;
+   }
+
+  .country-box{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .button-box{
+    height: 60px;
+     justify-content: space-between;
+    flex-direction: column;
+    margin: 1rem auto;
+  }
+   button{
+     width: max-content;
+     height: 20px;
+     font-size: 0.85rem;
+   }
+  span, p{
+    font-size: 0.95rem;
+  }
+  .country-info{
+    padding-left: 0.8rem;
+  }
+
+}
+@media screen and (min-width: 768px) and (max-width: 1023px){
+  .container{
+     margin: 5rem auto 0;
+   }
+  .country-box{
+    margin: auto
+  ;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  span, p{
+    font-size: 1rem;
+  }
+  .country-card{
+    width: 100%;
+    height: 100%;
+   }
+  .button-box{
+    height: 80px;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 1.5rem auto;
+  }
+  button{
+    width: max-content;
+    height: 30px;
+    font-size: 0.9rem;
+  }
+  .country-info{
+    padding-left: 0.8rem;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+  .country-box {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: auto;
+  }
+  .container{
+    width: 100%;
+    margin: 6.5rem auto 2rem;
+    justify-content: center;
+  }
+  span, p{
+    font-size: 1rem;
+  }
+  .country-info{
+    padding-left: 1rem;
+  }
+}
+@media screen and (min-width: 1201px){
+  button:hover, img{
+    cursor: pointer;
+  }
+
+  .container{
+    width: 100%;
+    margin: 6.5rem auto 2rem;
+    justify-content: center;
+  }
+  .country-box {
+    width: 85%;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin: auto;
+    gap: 2rem;
+  }
+
+  .country-card {
+    width: 100%;
+  }
+
+  .button-box{
+    height: 80px;
+    flex-direction: row;
+    justify-content:center;
+     width: 200px;
+    margin: 2rem auto 0;
+    gap: 1rem;
+  }
+  button{
+    width: max-content;
+    height: 30px;
+    font-size: 0.9rem;
+  }
+  span, p{
+    font-size: 1rem;
+  }
+  .country-info{
+    padding-left: 1rem;
+  }
+}
+
+

@@ -1,6 +1,23 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
-import { App } from './app/app';
+ import { App } from './app/app';
+ import {provideRouter} from '@angular/router';
+import { Routes } from '@angular/router';
 
-bootstrapApplication(App, appConfig)
-  .catch((err) => console.error(err));
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: '/Home',
+    pathMatch: 'full',
+  },
+  {
+    path: 'Home',
+    loadComponent: () => import('./app/home/home.component').then((m) => m.HomeComponent),
+  },
+  {
+    path: 'Country',
+    loadComponent: () => import('./app/country-details/country-details').then((m) => m.CountryDetails),
+  },
+];
+bootstrapApplication(App, {
+  providers: [provideRouter(routes) ],
+});

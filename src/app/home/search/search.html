@@ -1,0 +1,30 @@
+<div class="container">
+
+  <div class="search-box">
+    <i class="fa-solid fa-magnifying-glass" id="search-i"></i>
+    <input
+      type="search"
+      placeholder="Search for a country..."
+      class="search"
+      #search
+      (input)="searchCountry($event)"
+    >
+  </div>
+
+  <div class="region-select">
+    <div class="select-header" (click)="optionActive()">
+      <span class="select-p">Filter by Region</span>
+      <span class="select-icon"><i class="fa-solid fa-chevron-down select-icon"></i></span>
+    </div>
+    @if (isActive()){
+
+      <div class="options-box">
+        @for (region of countryService.regions(); track region) {
+          <div class="option" (click)="searchedRegion(region)">
+            {{ region }}
+          </div>
+        }
+      </div>
+    }
+  </div>
+ </div>
