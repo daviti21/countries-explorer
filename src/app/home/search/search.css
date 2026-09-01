@@ -225,4 +225,14 @@ text-transform: capitalize;
 
  }
  }
+ :host-context(body.dark) {
+   .search, .select-header, .options-box{
+     box-shadow: 0 5px 9px #1F2C35;
+     background-color: #2B3743;
+     color: #ffffff;
+   }
+   #search-i, .search::placeholder{
+     color: white;
+   }
 
+ }

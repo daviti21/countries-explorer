@@ -170,5 +170,11 @@ align-items: center;
     padding-left: 1rem;
   }
 }
+:host-context(body.dark){
+   .country-card, button{
+     box-shadow: 0 5px 9px #1F2C35;
+     background-color: #2B3743;
+     color: #ffffff;
+   }
 
-
+}

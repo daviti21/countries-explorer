@@ -15,7 +15,15 @@ button, i{
     color: #212121;
 
 }
-
+:host-context(body.dark){
+  button, h2, i{
+    color: #ffffff;
+  }
+  .container{
+    background-color: #2B3743;
+    box-shadow: 0 5px 9px #1F2C35;
+  }
+}
 @media screen and (max-width: 767px) {
    h2{
      font-size: 1.1rem;
