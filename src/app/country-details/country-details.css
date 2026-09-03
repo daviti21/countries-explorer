@@ -1,0 +1,31 @@
+img{
+  width: 100px;
+  height: 100px;
+}
+button{
+  border:none;
+  box-shadow: 2px 4px 10px #c5c3c3;
+}
+p{
+  font-weight: bold;
+}
+span{
+  font-weight: lighter;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+}
+.country-cont, .inf, .inf-box, .inf-box, .border-box{
+  display: flex;
+}
+
+.inf, .inf-div{
+  flex-direction: column;
+}
+:host-context(body.dark){
+  *{
+    color: white;
+  }
+}

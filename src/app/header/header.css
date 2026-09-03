@@ -15,6 +15,9 @@ button, i{
     color: #212121;
 
 }
+button:focus{
+ outline: none;
+}
 :host-context(body.dark){
   button, h2, i{
     color: #ffffff;

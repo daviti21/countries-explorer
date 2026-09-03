@@ -31,8 +31,7 @@ align-items: center;
   justify-content: center;
 }
 .country-box{
-  display: flex;
-  width: 100%;
+  display: grid;
 }
 
 @media screen and (max-width: 767px){
@@ -50,10 +49,10 @@ align-items: center;
    }
 
   .country-box{
-    flex-direction: column;
-    justify-content: center;
+    display: flex;
     align-items: center;
-
+    justify-content: center;
+   flex-direction: column;
   }
   .button-box{
     height: 60px;
@@ -82,7 +81,7 @@ align-items: center;
     margin: auto
   ;
     width: 90%;
-    display: grid;
+
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;
   }
@@ -111,7 +110,7 @@ align-items: center;
 @media screen and (min-width: 1024px) and (max-width: 1200px) {
   .country-box {
     width: 90%;
-    display: grid;
+
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin: auto;
@@ -127,9 +126,25 @@ align-items: center;
   .country-info{
     padding-left: 1rem;
   }
+  button:hover, .country-card:hover{
+    cursor: pointer;
+  }
+  .button-box{
+    height: 80px;
+    flex-direction: row;
+    justify-content:center;
+    width: 200px;
+    margin: 2rem auto 0;
+    gap: 1rem;
+  }
+  button{
+    width: max-content;
+    height: 30px;
+    font-size: 0.9rem;
+  }
 }
 @media screen and (min-width: 1201px){
-  button:hover, img{
+  button:hover, .country-card:hover{
     cursor: pointer;
   }
 
@@ -140,7 +155,6 @@ align-items: center;
   }
   .country-box {
     width: 85%;
-    display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     margin: auto;
     gap: 2rem;

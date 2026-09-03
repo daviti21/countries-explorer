@@ -1,1 +1,54 @@
-<p>country-details works!</p>
+ <div class="container">
+   <button routerLink="/Home">  <i class="fa-solid fa-arrow-left"></i>
+      Back</button>
+   @if (country){
+     <div class="country-cont">
+       <img src="{{country.flags.svg}}" alt="">
+       <div class="inf">
+         <h2 class="inf-tit">{{country.name}}</h2>
+         <div class="inf-div">
+           <div class="inf-box">
+             <div class="inf-left">
+             <p>Native Name: <span>{{country.nativeName}}</span></p>
+             <p>Population: <span>{{country.population}}</span></p>
+             <p>Region: <span>{{country.region}}</span></p>
+             <p>Sub Region: <span>{{country.subregion}}</span></p>
+             <p>Capital: <span>{{country.capital}}</span></p>
+           </div>
+             <div class="inf-right">
+               <p>Top Level Domain:  <span>{{country.topLevelDomain}}</span></p>
+               @for (cont of country.currencies; track cont){
+                 <p>Currencies: <span>{{cont.name}}</span></p>
+               }
+               <p>Languages:
+                 <span>
+              @for (cont of country.languages; track cont){
+                {{cont.name}}
+              }
+               </span>
+               </p>
+             </div></div>
+           <div class="border-inf">
+             <h4 class="border-tit">Border Countries:</h4>
+             <div class="border-box">
+               @for (cont of (country.borders ?? []).slice(0, num()); track cont) {
+                 <div class="country"  >
+                   <button class="cont-name" (click)="findBorder(cont)">
+                     {{ countries().find(c => c.alpha3Code === cont)?.name }}
+                   </button>
+                 </div>
+
+               }
+               @if (num() < (country.borders ?? []).length) {
+                 <button (click)=" moreBorder()">More</button>
+               }
+               @if (num()  > 6) {
+                 <button (click)="lessBorder()">Less</button>
+               }
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   }
+ </div>

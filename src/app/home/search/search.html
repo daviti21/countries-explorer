@@ -4,10 +4,11 @@
     <i class="fa-solid fa-magnifying-glass" id="search-i"></i>
     <input
       type="search"
-      placeholder="Search for a country..."
-      class="search"
+      [value]="countryService.searchValue()"
+       placeholder="Search for a country..."
       #search
       (input)="searchCountry($event)"
+      class="search"
     >
   </div>
 
@@ -20,9 +21,10 @@
 
       <div class="options-box">
         @for (region of countryService.regions(); track region) {
-          <div class="option" (click)="searchedRegion(region)">
-            {{ region }}
-          </div>
+          <div class="option" (click)="countryService.selectRegion(region)" [class.active]="countryService.selectedRegion() === region">
+               {{ region }}
+
+           </div>
         }
       </div>
     }

@@ -16,7 +16,7 @@ export class Search {
   searchCountry(event: Event){
     const value = (event.target as HTMLInputElement).value;
 
-    this.countryService.search.set(value);
+    this.countryService.searchValue.set(value);
 
    }
   searchedRegion(region: string){

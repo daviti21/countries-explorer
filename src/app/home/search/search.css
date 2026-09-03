@@ -10,6 +10,12 @@
    outline: none;
 text-transform: capitalize;
   }
+ .option.active{
+   text-decoration: underline;
+   text-decoration-color: #ff7d1a;
+   text-decoration-thickness: 1.5px;
+   text-underline-offset: 7px;
+ }
 
  .search::-webkit-search-cancel-button {
    -webkit-appearance: none;
@@ -224,6 +230,7 @@ text-transform: capitalize;
      cursor: pointer;
 
  }
+
  }
  :host-context(body.dark) {
    .search, .select-header, .options-box{

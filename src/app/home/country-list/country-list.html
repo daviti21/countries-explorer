@@ -2,7 +2,9 @@
    <div class="country-box">
      @for (country of this.coService.filteredCountries().slice(0, visibleCount()); track country.name) {
 
-       <div class="country-card">
+       <div class="country-card"
+            routerLink="/CountryDetail/{{country.name}}"
+            (click)="selectCountry(country)">
 
          <img
            [src]="country.flags.svg"
@@ -29,7 +31,7 @@
        @if (visibleCount() < coService.filteredCountries().length) {
          <button (click)="load()">Load More</button>
        }
-       @if (visibleCount() > 8) {
+       @if (visibleCount() > 9) {
          <button (click)="less()">Show Less</button>
        }
      </div>

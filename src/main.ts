@@ -14,7 +14,7 @@ const routes: Routes = [
     loadComponent: () => import('./app/home/home.component').then((m) => m.HomeComponent),
   },
   {
-    path: 'Country',
+    path: 'CountryDetail/:name',
     loadComponent: () => import('./app/country-details/country-details').then((m) => m.CountryDetails),
   },
 ];
