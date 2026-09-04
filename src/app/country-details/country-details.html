@@ -1,5 +1,5 @@
  <div class="container">
-   <button routerLink="/Home">  <i class="fa-solid fa-arrow-left"></i>
+   <button routerLink="/Home" class="back">  <i class="fa-solid fa-arrow-left"></i>
       Back</button>
    @if (country){
      <div class="country-cont">
@@ -31,24 +31,19 @@
            <div class="border-inf">
              <h4 class="border-tit">Border Countries:</h4>
              <div class="border-box">
-               @for (cont of (country.borders ?? []).slice(0, num()); track cont) {
+               @for (cont of (country.borders ?? []).slice(0, 3); track cont) {
                  <div class="country"  >
                    <button class="cont-name" (click)="findBorder(cont)">
                      {{ countries().find(c => c.alpha3Code === cont)?.name }}
                    </button>
                  </div>
-
-               }
-               @if (num() < (country.borders ?? []).length) {
-                 <button (click)=" moreBorder()">More</button>
-               }
-               @if (num()  > 6) {
-                 <button (click)="lessBorder()">Less</button>
-               }
+                }
              </div>
            </div>
          </div>
        </div>
      </div>
-   }
+
+ }
  </div>
+

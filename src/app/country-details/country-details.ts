@@ -15,14 +15,7 @@ export class CountryDetails implements OnInit {
   coService = inject(CountryService);
   country = this.coService.selectedCountry();
   countries = this.coService.countries;
-  num = signal(6);
-  moreBorder() {
-    this.num.update((n) => n + 6);
-  }
-  lessBorder(){
-    this.num.update((n) => n - 6);
 
-  };
   ngOnInit() {
     this.route.params.subscribe((params) => {
       const name = params['name'];
