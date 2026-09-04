@@ -18,7 +18,10 @@ span{
   flex-direction: column;
   background-color: transparent;
 }
-.country-cont, .inf, .inf-box, .inf-box, .border-box{
+.nBorder{
+  color:  #8a8a8a;
+}
+.country-cont, .inf, .inf-box, .inf-box{
   display: flex;
 }
 
@@ -29,10 +32,22 @@ span{
   *{
     color: white;
   }
+
   button{
     box-shadow: 0 5px 9px #1F2C35;
     background-color: #2B3743;
   }
+
+  .nBorder{
+    color: #aaa;
+  }
+}
+.border-box{
+  display: flex;
+  flex-wrap: wrap;
+}
+.inf-box{
+  justify-content: space-between;
 }
 
 @media screen  and (max-width: 767px){
@@ -40,6 +55,10 @@ span{
     width: 85%;
     margin: 1.5rem auto 2rem;
     max-width: 360px;
+  }
+
+  .nBorder{
+    font-size: .95rem;
   }
 
   .country-cont, .inf-box{
@@ -70,19 +89,19 @@ img{
 .border-box button{
   padding: 0.4rem 0.5rem;
   font-size: 0.8rem;
-}
+
+  }
 
 .border-box{
-   width:max-content;
-  gap: .5rem;
+  gap: .5rem
 }
 }
 
-@media screen and (min-width: 768px)  and (max-width: 1024px){
+@media screen and (min-width: 767px)  and (max-width: 1024px){
   .container{
-    width: 85%;
+    width: 100%;
     margin: 1.5rem auto 2rem;
-
+   padding: 0 1rem;
   }
 
   .country-cont, .inf-box{
@@ -119,14 +138,13 @@ img{
   }
 
   .border-box{
-    gap: 1.3rem;
-    max-width: 300px;
+    gap: 1rem;
+
   }
 
   .inf-box{
     width: 100%;
-    justify-content: space-between;
-   }
+     }
 
 }
 @media screen  and (min-width: 1024px) and (max-width: 1250px){
@@ -208,7 +226,7 @@ img{
 
   .border-box{
     gap: 1rem;
-     max-width: 300px;
+
   }
 
   .inf-box{

@@ -31,13 +31,17 @@
            <div class="border-inf">
              <h4 class="border-tit">Border Countries:</h4>
              <div class="border-box">
-               @for (cont of (country.borders ?? []).slice(0, 3); track cont) {
-                 <div class="country"  >
-                   <button class="cont-name" (click)="findBorder(cont)">
-                     {{ countries().find(c => c.alpha3Code === cont)?.name }}
-                   </button>
-                 </div>
-                }
+               @if (country.borders){
+                 @for (cont of (country.borders ?? []); track cont) {
+                   <div class="country"  >
+                     <button class="cont-name" (click)="findBorder(cont)">
+                       {{ countries().find(c => c.alpha3Code === cont)?.name }}
+                     </button>
+                   </div>
+                 }
+               } @else {
+                 <p class="nBorder">No border</p>
+               }
              </div>
            </div>
          </div>

@@ -13,17 +13,16 @@
 
   <div class="region-select">
     <div class="select-header" (click)="optionActive()">
-      <span class="select-p">Filter by Region</span>
+      <span class="select-p">Filter by {{regionString()}}</span>
       <span class="select-icon"><i class="fa-solid fa-chevron-down select-icon"></i></span>
     </div>
     @if (isActive()){
 
       <div class="options-box">
         @for (region of countryService.regions(); track region) {
-          <div class="option" (click)="countryService.selectRegion(region)" [class.active]="countryService.selectedRegion() === region">
-               {{ region }}
-
-           </div>
+         <div class="option" (click)="countryService.selectRegion(region); isActive.set(false);regionStringValue()">
+              {{ region }}
+          </div>
         }
       </div>
     }
