@@ -68,12 +68,13 @@ img{
  }
 
 .border-box button{
-  padding: 0.4rem 1rem;
+  padding: 0.4rem 0.5rem;
+  font-size: 0.8rem;
 }
 
 .border-box{
-   max-width: 300px;
-  gap: 1rem;
+   width:max-content;
+  gap: .5rem;
 }
 }
 
