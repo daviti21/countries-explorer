@@ -10,7 +10,7 @@ export class CountryService {
   selectedRegion = signal('');
   selectedCountry = signal<Country | null>(null);
   searchValue = signal('');
-
+  regionString = signal('Region')
   filteredCountries = computed(() =>
     this.countries().filter((country) => {
       const matchesSearch = country.name.toLowerCase().startsWith(this.searchValue().toLowerCase());
@@ -26,8 +26,10 @@ export class CountryService {
   selectRegion(region: string) {
     if (this.selectedRegion() === region) {
       this.selectedRegion.set('');
-    } else {
+      this.regionString.set('Region')
+     } else {
       this.selectedRegion.set(region);
+      this.regionString.set(region);
     }
   }
 }

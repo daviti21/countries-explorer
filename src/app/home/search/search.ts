@@ -9,9 +9,8 @@ import { CountryService } from '../../services/country.service';
 })
 export class Search  {
   isActive = signal(false);
-  regionString = signal('Region');
-regionActive = signal(false);
-  optionActive() {
+ regionActive = signal(false);
+   optionActive() {
     this.isActive.update((v) => !v);
   }
   countryService = inject(CountryService);
@@ -23,13 +22,5 @@ regionActive = signal(false);
   searchedRegion(region: string) {
     this.countryService.selectedRegion.set(region);
   }
-  regionStringValue() {
-       this.regionActive.update((v) => !v);
-       if(this.regionActive()){
-         this.regionString.set(this.countryService.selectedRegion());
-       }else {
-         this.regionString.set("Region");
-       }
 
-  }
 }
