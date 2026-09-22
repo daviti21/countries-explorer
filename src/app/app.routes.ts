@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { appGuard } from './app.guard';
 
 
 export const routes: Routes = [
@@ -14,6 +15,7 @@ export const routes: Routes = [
   {
     path: 'CountryDetail/:name',
     loadComponent: () => import('./country-details/country-details').then((m) => m.CountryDetails),
+    canActivate: [appGuard]
   },
   {
     path: '**',
