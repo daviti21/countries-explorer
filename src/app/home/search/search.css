@@ -75,7 +75,7 @@ text-transform: capitalize;
    z-index: 100;
  }
 
- @media screen and (max-width: 767px){
+ @media screen and (max-width: 768px){
    .container{
      margin: 2rem auto 0;
      max-width: 480px;
@@ -121,7 +121,7 @@ text-transform: capitalize;
    font-size: 0.9rem;
  }
   }
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 769px) and (max-width: 1024px) {
   .container {
     margin: 3rem auto 0;
     display: flex;
@@ -173,7 +173,7 @@ text-transform: capitalize;
     width: 300px;
   }
 }
- @media screen and (min-width: 1024px) {
+ @media screen and (min-width: 1025px) {
    .container {
      margin: 3rem auto 0;
      display: flex;
